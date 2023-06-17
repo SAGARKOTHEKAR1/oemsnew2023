@@ -1,0 +1,47 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-4">
+            <mat-card>
+            <div class="text-center">
+                <img class="w-25" src="{{userdata.profile}}" alt="">
+               <h1 class="mt-2">{{userdata.firstname}} {{userdata.lastname}}</h1>
+            </div>
+            <div class="row">
+              
+                  <table class="table text-center table-borderd table-striped">
+                    <tr>
+                        <th>User Role</th>
+                        <td>{{userdata.username}}</td>
+                    </tr>
+                    <tr>
+                        <th>User Id</th>
+                        <td>{{userdata.id}}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone No</th>
+                        <td>{{userdata.phone}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email Id</th>
+                        <td>{{userdata.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Active</th>
+                        <td>{{userdata.enabled}}</td>
+                    </tr>
+                    
+
+                    
+
+                  </table>  
+                  
+                  
+                 
+                  </div>
+                  
+            
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+
+    <h1 class="mt-20">question Of {{quiz_title}}</h1>
+    <div class="container-fluid ">
+        <div class="row justify-content-center" >
+          <div class="col-2">
+            <button mat-raised-button [routerLink]="['/admin-dashbord/addQuestion/'+quiz_id+'/'+quiz_title]" color="primary">Add Questions</button>
+          </div>                             
+        </div> 
+        <div class="row px-5 card">
+            <mat-card class="my-2 " *ngFor="let item of question ; let i = index" class="mt-20">
+               <mat-card-content class="col-md-12  ">
+                <p><b>Q{{i+1}} </b> <span [innerHTML]="item.content">{{item.content}}</span></p>
+                <div class="container-fluid  ">
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <p><b>A </b> <span>{{item.option1}}</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>B </b> <span>{{item.option2}}</span></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><b>C </b> <span>{{item.option3}}</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>D </b> <span>{{item.option4}}</span></p>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <p><b>Correct Answer:- </b> {{item.answer}}</p>
+                </div>
+               </mat-card-content>
+                <mat-card-actions class="text-center">
+                  <button mat-flat-button (click)="deleteQuestion(item.question_id)" class="mx-2" color="warn">Delete</button>
+                  <button mat-flat-button [routerLink]="'/admin-dashbord/updateQuestion/'+item.question_id+'/'+quiz_title" color="primary">Update</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>

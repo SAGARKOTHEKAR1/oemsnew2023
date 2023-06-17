@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card class="mt-4"  >
+                <mat-card-title>
+                    <h2 class="mt-2 mx-2">!! Read the instruction of this page carefully !!</h2>
+                </mat-card-title>
+                <mat-card-content>
+                    <h1>{{quizs.title}}</h1>
+                    <P> {{quizs.description}}</P>
+                    <mat-divider></mat-divider>
+                    <h2>Important instructions</h2>
+              <marquee behavior="" direction="up" scrollamount="3">
+                <ul class="text-danger">
+                    <li>this quiz only for exam purpuse </li>
+                    <li>Read carfully all question and give answer</li>
+                    <li>You have to submit quiz with in 6 minit </li>
+                    <li>ypu can attempt quiz any number of time</li>
+                    <li>thre are 5 question in quiz</li>
+                    <li>all question is of MCQ Type</li>
+                </ul>
+              </marquee>
+                    <mat-divider></mat-divider>
+                    <h2>Attempting Quiz</h2>
+          <marquee behavior="" direction="up" scrollamount="3">
+            <ul class="text-danger">
+                <li>Click start quiz to start the quiz</li>
+                <li>the time will start the moment you click the start test button</li>
+                <li>you can not resume quiz ,if interrupted due to any reason</li>
+                <li>scroll down to move next question</li>
+                <li>click on submit button to complit of quiz</li>
+                <li>report of test is automatic generet in the pdf copy</li>
+            </ul>
+          </marquee>
+                </mat-card-content>
+                <div class="container">
+                    <button class="btn btn-primary mt-4 mb-3 " (click)="starExam()">Start Exam</button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

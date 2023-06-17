@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <a [routerLink]="" mat-icon-button class="example-icon text">
+        <mat-icon >menu_book</mat-icon>
+    </a>
+    <span>Exam</span>
+
+    <span class="example-spacer"></span>
+    <a *ngIf="!islogedIn" [routerLink]=" 'login' " class="text nav-link"  mat-icon-button>
+        <!-- <mat-icon>login</mat-icon> -->
+        Login</a>
+        <a *ngIf="!islogedIn" [routerLink]=" 'signup' " class="mx-3 text"  mat-icon-button>SignUp</a>
+
+        <a *ngIf="islogedIn && user" class="text nav-link" style="color: white;" >{{user.username | titlecase}}</a>
+        <a (click)="logOut()" *ngIf="islogedIn" class="mx-3 text" [routerLink]=" 'signup' ">LogOut</a>
+</mat-toolbar>

@@ -1,0 +1,27 @@
+<mat-card class="mt-5">
+    <h1>Add Category</h1>
+    <mat-card-content>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+            <form align="center" [formGroup]="addCategory" (ngSubmit)="AddCategorys()">
+                <mat-form-field align="center" class=" form mt-3" appearance="outline">
+                    <mat-label>Category Title</mat-label>
+                    <input matInput formControlName="title" type="text" name="title">
+                  </mat-form-field>
+                
+                  <mat-form-field align="center" class=" form mt-3" appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"  type="text" rows="15" name="description"></textarea>
+                  </mat-form-field>
+                  <div class="text-center mt-4">
+                    <button mat-raised-button color="primary">Add Category</button>
+
+                  </div>
+                  
+                </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

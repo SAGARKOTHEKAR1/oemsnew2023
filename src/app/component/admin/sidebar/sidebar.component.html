@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-action-list>
+        <button mat-list-item class="mt-2">
+            <mat-icon class="mx-3 ">home</mat-icon>Home          
+        </button>
+        <button mat-list-item [routerLink]="'profile'" class="mt-3">
+            <mat-icon class="mx-3 ">account_circle</mat-icon>Profile
+
+        </button>
+        <button mat-list-item [routerLink]="'allCategory'" class="mt-3">
+            <mat-icon class="mx-3 " >category</mat-icon>Category
+
+        </button>
+        <button mat-list-item [routerLink]="'addCategory'" class="mt-3">
+            <mat-icon class="mx-3 ">add_circle_outline</mat-icon>Add Category
+
+        </button>
+        <button mat-list-item [routerLink]="'allQuize'" class="mt-3">
+            <mat-icon class="mx-3 " >quizzes</mat-icon>Quizzes
+
+        </button>
+        <button mat-list-item [routerLink]="'addQuize'" class="mt-3">
+            <mat-icon class="mx-3 " >add</mat-icon>Add Quizzes
+
+        </button>
+        <button mat-list-item  class="mt-3">
+            <mat-icon class="mx-3 " (click)="logout()">logout</mat-icon>Logout
+        </button>
+    </mat-action-list>
+</mat-card>

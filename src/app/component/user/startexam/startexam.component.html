@@ -1,0 +1,93 @@
+<div class="container-fluid" *ngIf="!isSubmit">
+    <div class="row">
+        <div class="col-md-2">
+            <mat-card class="mt-5">
+            <mat-card-title class="mx-2 mt-2">
+                <h1>Instruction</h1>
+            </mat-card-title>
+            <mat-card-content>
+                <ul>
+                    <li>Do not refresh the page otherwise you will get new questions.</li>
+                    <li>Do not switch the tabs</li>
+                    <li>Do not minimize the window</li>
+                </ul>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+
+    <div class="col-md-8">
+        <div class="container">
+            <h1>{{questions[0].quiz.title}}</h1>
+        </div>
+        <mat-card *ngFor="let item of questions; let i=index" class="mt-2">
+            <mat-card-content>
+                <h3><b>Q.{{i+1}})</b> <SPan [(NGmODEL)]="item.content">{{item.content}}</SPan> </h3>
+                <mat-divider></mat-divider>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <input type="radio" [name]="item.option1" [value]="item.option1" 
+                        [(ngModel)]="item.givenAnswer">{{item.option1}}
+                    </div>
+                    <div class="col-md-6">
+                        <input type="radio" [name]="item.option2" [value]="item.option2" 
+                        [(ngModel)]="item.givenAnswer">{{item.option2}}
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <input type="radio" [name]="item.option3" [value]="item.option3" 
+                        [(ngModel)]="item.givenAnswer">{{item.option3}}
+                    </div>
+                    <div class="col-md-6">
+                        <input type="radio" [name]="item.option4" [value]="item.option4" 
+                        [(ngModel)]="item.givenAnswer">{{item.option4}}
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <div class="container text-center mt-3">
+            <button class="btn btn-danger" (click)="submit()">End Exam</button>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <mat-card class="mt-5">
+            <mat-card-header>
+            <mat-card-title>Progress</mat-card-title>
+            <mat-card-subtitle>Quiz will automatic close after end the time</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <h2>{{getFormatedTime()}}</h2>
+            <mat-spinner mode="determinate" [value]="(timer/(questions.length*0.30*100))*100"></mat-spinner>
+        </mat-card-content>
+        </mat-card>
+    </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="isSubmit">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <mat-card>
+                <mat-card-title>
+                    <h1 class="text-center">Quiz Result</h1>
+                </mat-card-title>
+
+                <mat-card-content>
+                    <h3>Marks Got:{{marksGot}}</h3>
+                    <h3>Correct Answer:{{correctAnswers}}</h3>
+                    <h3>Attempt Questions:{{attempted}}</h3>
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <button class="btn btn-primary mx-2" (click)="printResult()">Print</button>
+                    <button class="btn btn-primary" [routerLink]="['/user-dashbord/'+0]">Home</button>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
+
